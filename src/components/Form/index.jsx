@@ -26,7 +26,7 @@ const Form = ({ cancel, id = null, edit = false}) => {
 
     useEffect(() => {
         functionThatSetData(id);
-    }, []);
+    }, [id]);
 
     const functionThatSetData = async id => {
         try {

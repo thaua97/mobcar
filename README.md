@@ -1,68 +1,124 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Iniciando o projeto 
 
-## Available Scripts
+Para iniciar o projeto devemos rodar os seguintes comandos:
 
-In the project directory, you can run:
+``yarn`` ou ``npm install``
 
-### `yarn start`
+Esses comandos iniciaram o processo de download das dependencias necessarias para rodar o projeto.
+Em seguida:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+yarn start
+```
+ou 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
+npm start
+```
+#### JSON-Server
 
-### `yarn test`
+Para o Mockup da API acabei utilizando o <a href="https://github.com/typicode/json-server" target="__blank">JSON Server</a>, como não havia uma expecificação de qual api deveria ser consumida, foi selecionada esta dependencia para a finalidade de Mockup.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ela funciona da seguinte forma, na raiz do projeto ou em aluma pasta selecionada expecificamente para isso, devemos criar im arquivo JSON, de nome `db.json`.
 
-### `yarn build`
+exemplo:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+````
+{
+  "cars": [
+    {
+      "id": 2,
+      "name": "Chevrolet Oni",
+      "year": "2013",
+      "price": 118,
+      "color": "prata",
+      "picture": "https://img.olx.com.br/images/56/569926114174941.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Renault Sandero",
+      "year": "2012",
+      "price": 102,
+      "color": "prata",
+      "picture": "https://s2.glbimg.com/2NWlZVIxW2gC3wptCEGtB2i1WUE=/290x217/s.glbimg.com/jo/g1/f/original/2011/05/11/sandero-300.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Fiat Palio",
+      "year": "2005",
+      "price": 50,
+      "color": "prata",
+      "picture": "https://imganuncios.mitula.net/fiat_palio_2006_flex_palio_fire_1_0_200506_manual_flex_2590_5990122587129244424.jpg"
+    }
+  ]
+}
+````
+Cada array ou objeto gravado nesse arquivo gera uma rota como por exemplo, `/cars` possuindo todos os metodos HTTP `GET`, `POST`, `PUT`, `DELETE` e etc...
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Para iniciarmos o Json serve na nossa maquina precisa ter a sua dependencia de forma global instalada, para isso devemos rodar o comando:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+````
+yarn add global json-server
+````
+ou 
+````
+npm install -g json-server
+````
 
-### `yarn eject`
+Em seguida para iniciarmos o servidor basta rodar o comando:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+````
+json-server --watch db.json --port 9000
+````
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Como nosso projeto React já esta utilizando a portal `3000` devemos utilizar uma outra porta para p json-server que utiliza por padrão também a porta `3000`.
+Nesta situação estou utilizando a porta `9000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Com isso o projeto ira executar em sua máquina.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+referências:
 
-## Learn More
+<a href="https://github.com/typicode/json-server" target="_blank">JSON-server</a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+___
+### Dependencias 
+  - "@testing-library/jest-dom": "^4.2.4",
+  - "@testing-library/react": "^9.3.2",
+  - "@testing-library/user-event": "^7.1.2",
+  - "@unform/core": "^2.1.3",
+  - "@unform/web": "^2.1.3",
+  - "axios": "^0.20.0",
+  - "global": "^4.4.0",
+  - "polished": "^4.0.1",
+  - "react": "^16.13.1",
+  - "react-dom": "^16.13.1",
+  - "react-icons": "^3.11.0",
+  - "react-modal": "^3.11.2",
+  - "react-scripts": "3.4.3",
+  - "react-toastify": "^6.0.9",
+  - "styled-components": "^5.2.0",
+  - "yup": "^0.29.3"
+___
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  ### Dependencias de desenvolvimento
 
-### Code Splitting
+  - "@typescript-eslint/eslint-plugin": "^4.4.0",
+  - "@typescript-eslint/parser": "^4.4.0",
+  - "babel-eslint": "^10.1.0",
+  - "babel-plugin-root-import": "^6.5.0",
+  - "customize-cra": "^1.0.0",
+  - "eslint": "^6.6.0",
+  - "eslint-config-prettier": "^6.12.0",
+  - "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
+  - "eslint-plugin-prettier": "^3.1.4",
+  - "eslint-plugin-react": "^7.21.3",
+  - "json-serve": "^0.1.0",
+  - "prettier": "^2.1.2",
+  - "react-app-rewired": "^2.1.6"
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+  ___
 
-### Analyzing the Bundle Size
+  <a href="https://github.com/thaua97/" target="__blank">@author</a> Thauã Borges.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

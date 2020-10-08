@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
-import { Form, Input } from '@unform/web';
+import { Form } from '@unform/web';
 
 export const FormContainer = styled(Form)`
     width: 100%;
