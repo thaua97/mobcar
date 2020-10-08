@@ -45,8 +45,6 @@ const Form = ({ cancel, id = null, edit = false}) => {
     };
 
     const handleSubmit = async data => {
-        console.log(data)
-
         if(!edit) {
             try {
                 await api.post(`cars`, data);
