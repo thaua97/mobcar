@@ -1,0 +1,28 @@
+{
+  "cars": [
+    {
+      "id": 2,
+      "name": "Chevrolet Oni",
+      "year": "2013",
+      "price": 118,
+      "color": "prata",
+      "picture": "https://img.olx.com.br/images/56/569926114174941.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Renault Sandero",
+      "year": "2012",
+      "price": 102,
+      "color": "prata",
+      "picture": "https://s2.glbimg.com/2NWlZVIxW2gC3wptCEGtB2i1WUE=/290x217/s.glbimg.com/jo/g1/f/original/2011/05/11/sandero-300.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Fiat Palio",
+      "year": "2005",
+      "price": 50,
+      "color": "prata",
+      "picture": "https://imganuncios.mitula.net/fiat_palio_2006_flex_palio_fire_1_0_200506_manual_flex_2590_5990122587129244424.jpg"
+    }
+  ]
+}
