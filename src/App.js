@@ -4,6 +4,8 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './styles/global';
 import DefaultTheme from './styles/themes/default';
 
+import { ToastContainer } from 'react-toastify';
+
 import Home from './pages/Home';
 
 const App = () => {
@@ -17,8 +19,9 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
       <Home/>
+      <GlobalStyle />
+      <ToastContainer autoClose={3000} />
     </ThemeProvider>
   );
 }

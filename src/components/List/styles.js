@@ -19,7 +19,7 @@ export const ListContainer = styled.ul`
 
     @media (min-width: 1024px) {
         height: 100%;
-        max-height: none;
+        max-height: 100%;
         margin-bottom: 16%;
     }
 `;
@@ -101,5 +101,12 @@ export const ListSubTile = styled.p`
 export const ListAction = styled(MdMoreVert)`
     width: 24px;
     height: 24px;
-    color: ${props => lighten(0.4, props.theme.colors.secundary)}
-`
+    color: ${props => lighten(0.4, props.theme.colors.secundary)};
+`;
+
+export const NoData = styled.h2`
+    width: 100%;
+    margin-top: 5%;
+    text-align: center;
+    color: ${props => lighten(0.8, props.theme.colors.secundary)};
+`;

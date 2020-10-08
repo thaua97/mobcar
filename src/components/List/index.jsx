@@ -1,6 +1,7 @@
 import React, {useEffect, useState } from 'react';
 import api from '~/services/api';
 import { formatCurrancy } from '~/services/helpers/format';
+import { toast } from 'react-toastify';
 
 import { AiFillCar, AiOutlineClose } from 'react-icons/ai';
 
@@ -14,7 +15,8 @@ import {
     ListItemContent,
     ListTile,
     ListSubTile,
-    ListAction
+    ListAction,
+    NoData
 } from './styles';
 
 import {
@@ -45,7 +47,7 @@ const List = () => {
 
             setCars(res.data);
         } catch (error) {
-            return;
+            toast.error('Error: Server not Response try again later!');
         }
     }
 
@@ -60,9 +62,11 @@ const List = () => {
 
             const remove = cars?.filter(item => item.id !== id);
 
+            toast.success('Car deleted with success!');
+
             setCars(remove);
         } catch (error) {
-            return;
+            toast.error('Error: Server not Response try again later!');
         }
     }
 
@@ -102,9 +106,9 @@ const List = () => {
                                 </DropdownContent>
                             </Dropdown>
                         </ListItem>
-
                     )
                 })}
+                {cars <= 0  ? <NoData>No data</NoData> : null}
             </ListContainer>
 
             <ModalFade
